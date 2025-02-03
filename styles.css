@@ -91,7 +91,7 @@ h1 {
 }
 
 .button.comprar {
-    display: inline-block;
+    display: block; /* Alterado para block para centralizar com margin */
     padding: 10px 20px;
     text-decoration: none;
     font-size: 16px;
@@ -101,8 +101,8 @@ h1 {
     font-family: 'Comic Sans MS', 'Comic Sans', 'cursive';
     transition: all 0.3s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    margin-top: 10px;
-    width: 100%; /* Ocupa a largura total do contêiner */
+    margin: 10px auto 0; /* Centraliza o botão horizontalmente */
+    width: 80%; /* Largura do botão */
     max-width: 200px; /* Largura máxima para telas maiores */
 }
 
@@ -159,7 +159,7 @@ footer {
     }
 
     .button, .button.comprar {
-        width: 100%; /* Botões ocupam toda a largura */
+        width: 80%; /* Largura do botão */
         max-width: none; /* Remove a largura máxima */
     }
 }
@@ -176,6 +176,7 @@ footer {
     .button, .button.comprar {
         font-size: 14px; /* Reduzir o tamanho da fonte dos botões */
         padding: 10px 15px; /* Ajustar o padding */
+        width: 90%; /* Aumentar a largura do botão em telas muito pequenas */
     }
 }
 
