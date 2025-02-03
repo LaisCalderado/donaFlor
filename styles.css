@@ -1,0 +1,136 @@
+/* Estilos globais */
+body {
+    font-family: 'Comic Sans MS', 'Comic Sans', 'cursive';
+    /*background-color: #f5f5dc;*/
+    background-image: url('./imagens/fundo2.jpeg');
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #4a4a4a;
+}
+
+.container {
+    width: 90%;
+    max-width: 800px; /* Aumentei o tamanho para acomodar melhor as imagens */
+    margin: 50px auto;
+    background: #ebeedd;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-family: 'Comic Sans MS', 'Comic Sans', 'cursive';
+    font-size: 28px;
+    color: #4a4a4a;
+    margin-bottom: 20px;
+}
+/* Estilos do perfil */
+.profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile img {
+    width: 150px; /* Largura fixa */
+    height: 150px; /* Altura fixa */
+    border-radius: 50%; /* Formato circular */
+    border: 4px solid #d4a373; /* Borda sutil */
+    object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
+    margin-bottom: 15px;
+}
+
+/* Estilos da galeria */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.gallery-item {
+    width: calc(33.333% - 20px); /* 3 colunas com espaçamento */
+    text-align: center;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 200px; /* Altura fixa para padronizar */
+    object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05);
+}
+
+.description {
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #6c9e67;
+}
+
+/* Estilos do botão Voltar */
+footer {
+    margin-top: 30px;
+}
+
+.button {
+    display: inline-block;
+    padding: 12px 24px;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #6c9e67, #8bc34a);
+    color: white;
+    font-family: 'Comic Sans MS', 'Comic Sans', 'cursive';
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.button:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .gallery-item {
+        width: calc(50% - 20px); /* 2 colunas em telas menores */
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-item {
+        width: 100%; /* 1 coluna em telas muito pequenas */
+    }
+}
+
+.instagram-link {
+    color: #777; /* Cor padrão do link */
+    text-decoration: none; /* Remove o sublinhado */
+    font-weight: 600; /* Peso da fonte */
+    transition: color 0.3s ease; /* Transição suave para hover */
+}
+
+.instagram-link:visited {
+    color: #777; /* Mantém a mesma cor após o clique */
+}
+
+.instagram-link:hover {
+    color: #6c9e67; /* Cor ao passar o mouse (opcional) */
+}
+
+.instagram-link:active {
+    color: #777; /* Mantém a mesma cor ao clicar */
+}
