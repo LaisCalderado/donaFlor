@@ -1,8 +1,12 @@
 /* Estilos globais */
 body {
     font-family: 'Comic Sans MS', 'Comic Sans', 'cursive';
-    /*background-color: #f5f5dc;*/
+    background-color: #f5f5dc; /* Fallback caso a imagem não carregue */
     background-image: url('./imagens/fundo2.jpeg');
+    background-size: cover; /* Cobrir toda a área */
+    background-position: center; /* Centralizar a imagem */
+    background-repeat: no-repeat; /* Evitar repetição */
+    background-attachment: fixed; /* Fixar a imagem ao rolar a página */
     text-align: center;
     margin: 0;
     padding: 0;
@@ -14,7 +18,7 @@ body {
     width: 90%;
     max-width: 800px; /* Aumentei o tamanho para acomodar melhor as imagens */
     margin: 50px auto;
-    background: #ebeedd;
+    background: rgba(235, 238, 221, 0.9); /* Fundo semi-transparente */
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
@@ -26,6 +30,7 @@ h1 {
     color: #4a4a4a;
     margin-bottom: 20px;
 }
+
 /* Estilos do perfil */
 .profile {
     display: flex;
@@ -53,6 +58,15 @@ h1 {
 .gallery-item {
     width: calc(33.333% - 20px); /* 3 colunas com espaçamento */
     text-align: center;
+    background: #fff;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
 }
 
 .gallery-item img {
@@ -60,19 +74,44 @@ h1 {
     height: 200px; /* Altura fixa para padronizar */
     object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
     border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-}
-
-.gallery-item img:hover {
-    transform: scale(1.05);
+   
 }
 
 .description {
-    margin-top: 10px;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 600;
+    color: #4a4a4a;
+    margin: 10px 0;
+}
+
+.price {
+    font-size: 16px;
     color: #6c9e67;
+    margin: 5px 0;
+}
+
+.button.comprar {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, #6c9e67, #8bc34a);
+    color: white;
+    font-family: 'Comic Sans MS', 'Comic Sans', 'cursive';
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+}
+
+.button.comprar:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.button.comprar:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 /* Estilos do botão Voltar */
@@ -91,6 +130,7 @@ footer {
     font-family: 'Comic Sans MS', 'Comic Sans', 'cursive';
     transition: all 0.3s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px; /* Espaçamento entre os botões */
 }
 
 .button:hover {
@@ -108,11 +148,23 @@ footer {
     .gallery-item {
         width: calc(50% - 20px); /* 2 colunas em telas menores */
     }
+    
+    h1 {
+        font-size: 24px; /* Reduzir o tamanho da fonte */
+    }
+
+    .button {
+        width: 100%; /* Botões ocupam toda a largura */
+    }
 }
 
 @media (max-width: 480px) {
     .gallery-item {
         width: 100%; /* 1 coluna em telas muito pequenas */
+    }
+
+    h1 {
+        font-size: 20px; /* Reduzir ainda mais o tamanho da fonte */
     }
 }
 
