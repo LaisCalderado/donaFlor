@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catálogo - Dona Flor Kokedamas</title>
     <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
     <div class="container">
@@ -14,18 +16,24 @@
         <main class="gallery">
             <!-- Item 1 -->
             <div class="gallery-item">
-                <img src="./imagens/samanbaia.jpeg" alt="Kokedama de samambaia - Dona Flor Kokedamas">
-                <p class="description">Kokedama de Samambaia - R$ 50,00</p>
+                <img src="./imagens/samanbaia.jpeg" alt="Kokedama de samambaia - Dona Flor Kokedamas" data-nome="Samambaia">
+                <p class="description">Kokedama de Samambaia</p>
+                <p class="price">R$ 50,00</p>
+                <a href="#" class="button comprar" data-nome="Samambaia">Comprar Agora</a>
             </div>
             <!-- Item 2 -->
             <div class="gallery-item">
-                <img src="./imagens/suculentas.webp" alt="Kokedama de suculenta - Dona Flor Kokedamas">
-                <p class="description">Kokedama de Suculenta - R$ 45,00</p>
+                <img src="./imagens/suculentas.webp" alt="Kokedama de suculenta - Dona Flor Kokedamas" data-nome="Suculenta">
+                <p class="description">Kokedama de Suculenta</p>
+                <p class="price">R$ 45,00</p>
+                <a href="#" class="button comprar" data-nome="Suculenta">Comprar Agora</a>
             </div>
             <!-- Item 3 -->
             <div class="gallery-item">
-                <img src="./imagens/orquideas.jfif" alt="Kokedama de orquídea - Dona Flor Kokedamas">
-                <p class="description">Kokedama de Orquídea - R$ 60,00</p>
+                <img src="./imagens/orquideas.jfif" alt="Kokedama de orquídea - Dona Flor Kokedamas" data-nome="Orquídea">
+                <p class="description">Kokedama de Orquídea</p>
+                <p class="price">R$ 60,00</p>
+                <a href="#" class="button comprar" data-nome="Orquídea">Comprar Agora</a>
             </div>
         </main>
         <footer>
@@ -34,5 +42,35 @@
             </a>
         </footer>
     </div>
+
+    <!-- JavaScript para o link do WhatsApp -->
+    <script>
+        // Captura todos os botões "Comprar Agora"
+        const botoesComprar = document.querySelectorAll('.comprar');
+
+        botoesComprar.forEach(botao => {
+            botao.addEventListener('click', (e) => {
+                e.preventDefault(); // Evita que o link seja aberto diretamente
+
+                // Captura o nome da flor a partir do atributo data-nome
+                const nomeFlor = botao.getAttribute('data-nome');
+
+                // Cria a mensagem para o WhatsApp
+                const mensagem = `Olá, estou interessada em comprar essa Kokedama: ${nomeFlor}.`;
+
+                // Codifica a mensagem para uso em URL
+                const mensagemCodificada = encodeURIComponent(mensagem);
+
+                // Número de telefone (substitua pelo seu número)
+                const telefone = "5531973409832";
+
+                // Cria o link do WhatsApp
+                const linkWhatsApp = `https://wa.me/${telefone}?text=${mensagemCodificada}`;
+
+                // Abre o link em uma nova aba
+                window.open(linkWhatsApp, '_blank');
+            });
+        });
+    </script>
 </body>
 </html>
