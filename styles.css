@@ -52,7 +52,7 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
-    justify-content: center;
+    justify-content: center; /* Centraliza os itens horizontalmente */
 }
 
 .gallery-item {
@@ -119,6 +119,7 @@ h1 {
 /* Estilos do botão Voltar */
 footer {
     margin-top: 30px;
+    text-align: center; /* Centraliza o botão Voltar */
 }
 
 .button {
