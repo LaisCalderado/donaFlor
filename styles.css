@@ -74,7 +74,7 @@ h1 {
     height: 200px; /* Altura fixa para padronizar */
     object-fit: cover; /* Garante que a imagem cubra o espaço sem distorcer */
     border-radius: 12px;
-   
+    margin-bottom: 10px;
 }
 
 .description {
@@ -102,6 +102,8 @@ h1 {
     transition: all 0.3s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin-top: 10px;
+    width: 100%; /* Ocupa a largura total do contêiner */
+    max-width: 200px; /* Largura máxima para telas maiores */
 }
 
 .button.comprar:hover {
@@ -131,6 +133,8 @@ footer {
     transition: all 0.3s ease;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     margin-bottom: 15px; /* Espaçamento entre os botões */
+    width: 100%; /* Ocupa a largura total do contêiner */
+    max-width: 200px; /* Largura máxima para telas maiores */
 }
 
 .button:hover {
@@ -148,13 +152,14 @@ footer {
     .gallery-item {
         width: calc(50% - 20px); /* 2 colunas em telas menores */
     }
-    
+
     h1 {
         font-size: 24px; /* Reduzir o tamanho da fonte */
     }
 
-    .button {
+    .button, .button.comprar {
         width: 100%; /* Botões ocupam toda a largura */
+        max-width: none; /* Remove a largura máxima */
     }
 }
 
@@ -165,6 +170,11 @@ footer {
 
     h1 {
         font-size: 20px; /* Reduzir ainda mais o tamanho da fonte */
+    }
+
+    .button, .button.comprar {
+        font-size: 14px; /* Reduzir o tamanho da fonte dos botões */
+        padding: 10px 15px; /* Ajustar o padding */
     }
 }
 
